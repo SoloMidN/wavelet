@@ -8,9 +8,11 @@ class Handler1 implements URLHandler {
     ArrayList<String> str = new ArrayList<>(); 
 
     public String handleRequest(URI url) {
-        if (url.getPath().equals("/")) {
-            return String.format("Solomon's Number: %d", str);
-        } else if (url.getPath().equals("/search")) {
+        // //if (url.getPath().equals("/")) {
+        //     return String.format("Solomon's Number: %d", str);
+        // } 
+        
+        if (url.getPath().equals("/search")) {
             String[] parameters = url.getQuery().split("=");
             if (parameters[0].equals("s")){
                 String toReturn = "";
@@ -36,7 +38,7 @@ class Handler1 implements URLHandler {
                 if (parameters[0].equals("s")) {
                     str.add(parameters[1]);
             
-                    return String.format("Number increased by %s! It's now %d", parameters[1], str);
+                    return String.format("Number increased by", parameters[1], str);
                 }
             }
             return "404 Not Found!";
